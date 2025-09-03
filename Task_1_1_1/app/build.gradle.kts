@@ -48,4 +48,5 @@ tasks.jacocoTestReport {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
 }

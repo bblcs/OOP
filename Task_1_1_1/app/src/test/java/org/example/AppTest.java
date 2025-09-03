@@ -6,9 +6,54 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+public class AppTest {
+
+    @Test
+    void testEmptyArray() {
+        int[] arr = {};
+        App.sort(arr);
+        assertArrayEquals(new int[]{}, arr);
+    }
+
+    @Test
+    void testSingleElementArray() {
+        int[] arr = {0};
+        App.sort(arr);
+        assertArrayEquals(new int[]{0}, arr);
+    }
+
+    @Test
+    void testAlreadySortedArray() {
+        int[] arr = {1, 2, 3};
+        App.sort(arr);
+        assertArrayEquals(new int[]{1, 2, 3}, arr);
+    }
+
+    @Test
+    void testReverseSortedArray() {
+        int[] arr = {5, 4, 3, 2, 1};
+        App.sort(arr);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, arr);
+    }
+
+    @Test
+    void testUnsortedArray() {
+        int[] arr = {5, 4, 1, 2, 3};
+        App.sort(arr);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, arr);
+    }
+
+    @Test
+    void testArrayWithDuplicates() {
+        int[] arr = {3, 2, 4, 2, 3, 1};
+        App.sort(arr);
+        assertArrayEquals(new int[]{1, 2, 2, 3, 3, 4}, arr);
+    }
+
+    @Test
+    void testArrayWithNegativeNumbers() {
+        int[] arr = {-2, -1, -3, 0, 1};
+        App.sort(arr);
+        assertArrayEquals(new int[]{-3, -2, -1, 0, 1}, arr);
     }
 }

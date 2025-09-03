@@ -45,6 +45,18 @@ tasks.jacocoTestReport {
     }
 }
 
+tasks.test {
+    enabled = true
+}
+
+tasks.test {
+      finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+      dependsOn(tasks.test)
+}
+
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()

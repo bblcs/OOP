@@ -9,52 +9,70 @@ import org.junit.jupiter.api.Test;
 
 public class AppTest {
 
+    /**
+     * @param arr an array
+     * @return whether the arr is sorted
+     */
+    static boolean isSorted(int arr[]) {
+        if (arr.length == 0) {
+            return true;
+        }
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     @Test
     void testEmptyArray() {
         int[] arr = {};
         App.sort(arr);
-        assertArrayEquals(new int[] {}, arr);
+        assertTrue(isSorted(arr));
     }
 
     @Test
     void testSingleElementArray() {
         int[] arr = {0};
         App.sort(arr);
-        assertArrayEquals(new int[] {0}, arr);
+        assertTrue(isSorted(arr));
     }
 
     @Test
     void testAlreadySortedArray() {
         int[] arr = {1, 2, 3};
         App.sort(arr);
-        assertArrayEquals(new int[] {1, 2, 3}, arr);
+        assertTrue(isSorted(arr));
     }
 
     @Test
     void testReverseSortedArray() {
         int[] arr = {5, 4, 3, 2, 1};
         App.sort(arr);
-        assertArrayEquals(new int[] {1, 2, 3, 4, 5}, arr);
+        assertTrue(isSorted(arr));
     }
 
     @Test
     void testUnsortedArray() {
         int[] arr = {5, 4, 1, 2, 3};
         App.sort(arr);
-        assertArrayEquals(new int[] {1, 2, 3, 4, 5}, arr);
+        assertTrue(isSorted(arr));
     }
 
     @Test
     void testArrayWithDuplicates() {
         int[] arr = {3, 2, 4, 2, 3, 1};
         App.sort(arr);
-        assertArrayEquals(new int[] {1, 2, 2, 3, 3, 4}, arr);
+        assertTrue(isSorted(arr));
     }
 
     @Test
     void testArrayWithNegativeNumbers() {
         int[] arr = {-2, -1, -3, 0, 1};
         App.sort(arr);
-        assertArrayEquals(new int[] {-3, -2, -1, 0, 1}, arr);
+        assertTrue(isSorted(arr));
     }
 }

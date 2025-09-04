@@ -4,7 +4,11 @@
 
 package org.example;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
@@ -78,5 +82,56 @@ public class AppTest {
         int[] arr = {-2, -1, -3, 0, 1};
         App.sort(arr);
         assertTrue(isSorted(arr));
+    }
+
+    @Test
+    void testPrintArrBasic() {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(baos);
+        PrintStream old = System.out;
+        System.setOut(ps);
+        int[] arr = {1, 2, 3};
+        App.printArr(arr);
+        System.setOut(old);
+        String cap = baos.toString();
+        assertEquals("1 2 3", cap);
+    }
+
+    @Test
+    void testPrintArrEmpty() {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(baos);
+        PrintStream old = System.out;
+        System.setOut(ps);
+        int[] arr = {};
+        App.printArr(arr);
+        System.setOut(old);
+        String cap = baos.toString();
+        assertEquals("", cap);
+    }
+
+    @Test
+    void testPrintArrOneElement() {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(baos);
+        PrintStream old = System.out;
+        System.setOut(ps);
+        int[] arr = {1};
+        App.printArr(arr);
+        System.setOut(old);
+        String cap = baos.toString();
+        assertEquals("1", cap);
+    }
+
+    @Test
+    void testMainMethod() {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(baos);
+        PrintStream old = System.out;
+        System.setOut(ps);
+        App.main(new String[]{});
+        System.setOut(old);
+        String cap = baos.toString();
+        assertEquals("1 2 3 4 5", cap);
     }
 }

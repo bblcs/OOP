@@ -2,13 +2,14 @@ package org.example;
 
 import java.util.PriorityQueue;
 
+/** App */
 public class App {
     /**
-     * sorts an array using heapsort algorithm
+     * sorts an array using heapsort algorithm.
      *
-     * @param arr - array of integers
+     * @param arr - array of integers.
      */
-    static void sort(int arr[]) {
+    static void sort(int[] arr) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int i = 0; i < arr.length; i++) {
             pq.add(arr[i]);
@@ -19,7 +20,12 @@ public class App {
         }
     }
 
-    static void printArr(int arr[]) {
+    /**
+     * prints an array.
+     *
+     * @param arr array to print.
+     */
+    static void printArr(int[] arr) {
         boolean first = true;
         for (int i = 0; i < arr.length; i++) {
             if (!first) {
@@ -32,7 +38,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        int arr[] = {5, 4, 3, 2, 1};
+        int[] arr = {5, 4, 3, 2, 1};
         App.sort(arr);
         App.printArr(arr);
     }

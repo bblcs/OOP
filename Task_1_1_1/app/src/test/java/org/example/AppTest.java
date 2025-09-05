@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
-/** AppTest. */
+/** A class for general testing. */
 public class AppTest {
 
     /**
@@ -85,45 +85,6 @@ public class AppTest {
     }
 
     @Test
-    void testPrintArrBasic() {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(baos);
-        PrintStream old = System.out;
-        System.setOut(ps);
-        int[] arr = {1, 2, 3};
-        App.printArr(arr);
-        System.setOut(old);
-        String cap = baos.toString();
-        assertEquals("1 2 3", cap);
-    }
-
-    @Test
-    void testPrintArrEmpty() {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(baos);
-        PrintStream old = System.out;
-        System.setOut(ps);
-        int[] arr = {};
-        App.printArr(arr);
-        System.setOut(old);
-        String cap = baos.toString();
-        assertEquals("", cap);
-    }
-
-    @Test
-    void testPrintArrOneElement() {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(baos);
-        PrintStream old = System.out;
-        System.setOut(ps);
-        int[] arr = {1};
-        App.printArr(arr);
-        System.setOut(old);
-        String cap = baos.toString();
-        assertEquals("1", cap);
-    }
-
-    @Test
     void testMainMethod() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(baos);
@@ -132,6 +93,6 @@ public class AppTest {
         App.main(new String[]{});
         System.setOut(old);
         String cap = baos.toString();
-        assertEquals("1 2 3 4 5", cap);
+        assertEquals("[1, 2, 3, 4, 5]\n", cap);
     }
 }

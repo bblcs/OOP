@@ -22,7 +22,7 @@ public class App {
 
     /**
      * Sorts and prints an example array of integers.
-     * 
+     *
      * @param args commandline arguments, not used.
      */
     public static void main(String[] args) {

@@ -1,11 +1,12 @@
 package org.example;
 
-import java.util.ArrayList;
 import static java.util.Collections.swap;
+
+import java.util.ArrayList;
 
 /**
  * A binary min-heap.
- * 
+ *
  * @param <T> Comparable elements.
  */
 public class Heap<T extends Comparable<T>> {
@@ -35,7 +36,7 @@ public class Heap<T extends Comparable<T>> {
 
     /**
      * Makes a heap from a given ArrayList of elements.
-     * 
+     *
      * @param arr array of elements that form the heap.
      */
     public Heap(ArrayList<T> arr) {
@@ -48,7 +49,7 @@ public class Heap<T extends Comparable<T>> {
     /**
      * Inserts element e into the heap
      * whilst retaining the min-heap invariant.
-     * 
+     *
      * @param e element to insert.
      */
     public void insert(T e) {
@@ -59,12 +60,12 @@ public class Heap<T extends Comparable<T>> {
     /**
      * Extracts the minimal element of the heap
      * whilst retaining min-heap invariant.
-     * 
+     *
      * @return minimal element in the heap.
      */
     public T extractMin() {
+        final T min = data.get(0);
         int last = size() - 1;
-        T min = data.get(0);
         swap(data, 0, last);
         data.remove(last);
         siftDown(0);
@@ -72,8 +73,8 @@ public class Heap<T extends Comparable<T>> {
     }
 
     /**
-     * Returns number of elements in the heap
-     * 
+     * Returns number of elements in the heap.
+     *
      * @return number of elements in the heap.
      */
     public int size() {

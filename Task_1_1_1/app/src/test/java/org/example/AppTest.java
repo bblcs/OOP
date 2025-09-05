@@ -16,7 +16,7 @@ public class AppTest {
 
     /**
      * Determines whether the arr is sorted.
-     * 
+     *
      * @param arr an array
      * @return whether the arr is sorted
      */

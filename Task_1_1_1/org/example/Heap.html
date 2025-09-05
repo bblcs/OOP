@@ -81,18 +81,18 @@ loadScripts(document, 'script');</script>
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">org.example</a></div>
-<h1 title="Class Heap" class="title">Class Heap&lt;T extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;&gt;</h1>
+<h1 title="Class Heap" class="title">Class Heap&lt;E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;E&gt;&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">org.example.Heap&lt;T&gt;</div>
+<div class="inheritance">org.example.Heap&lt;E&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Type Parameters:</dt>
-<dd><code>T</code> - Comparable elements.</dd>
+<dd><code>E</code> - Comparable elements.</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Heap&lt;T extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;&gt;</span>
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Heap&lt;E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;E&gt;&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A binary min-heap.</div>
 </section>
@@ -110,9 +110,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">A basic constructor.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.ArrayList)" class="member-name-link">Heap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="Heap.html" title="type parameter in Heap">T</a>&gt;&nbsp;arr)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.Collection)" class="member-name-link">Heap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="Heap.html" title="type parameter in Heap">E</a>&gt;&nbsp;elements)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Makes a heap from a given ArrayList of elements.</div>
+<div class="block">Makes a heap from a given Collection of elements.</div>
 </div>
 </div>
 </section>
@@ -128,14 +128,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Heap.html" title="type parameter in Heap">T</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Heap.html" title="type parameter in Heap">E</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#extractMin()" class="member-name-link">extractMin</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Extracts the minimal element of the heap
  whilst retaining min-heap invariant.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(T)" class="member-name-link">insert</a><wbr>(<a href="Heap.html" title="type parameter in Heap">T</a>&nbsp;e)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insert(E)" class="member-name-link">insert</a><wbr>(<a href="Heap.html" title="type parameter in Heap">E</a>&nbsp;e)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Inserts element e into the heap
  whilst retaining the min-heap invariant.</div>
@@ -170,13 +170,13 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(java.util.ArrayList)">
+<section class="detail" id="&lt;init&gt;(java.util.Collection)">
 <h3>Heap</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Heap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="Heap.html" title="type parameter in Heap">T</a>&gt;&nbsp;arr)</span></div>
-<div class="block">Makes a heap from a given ArrayList of elements.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Heap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;? extends <a href="Heap.html" title="type parameter in Heap">E</a>&gt;&nbsp;elements)</span></div>
+<div class="block">Makes a heap from a given Collection of elements.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>arr</code> - array of elements that form the heap.</dd>
+<dd><code>elements</code> - array of elements that form the heap.</dd>
 </dl>
 </section>
 </li>
@@ -189,9 +189,9 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="insert(T)">
+<section class="detail" id="insert(E)">
 <h3 id="insert(java.lang.Comparable)">insert</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">insert</span><wbr><span class="parameters">(<a href="Heap.html" title="type parameter in Heap">T</a>&nbsp;e)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">insert</span><wbr><span class="parameters">(<a href="Heap.html" title="type parameter in Heap">E</a>&nbsp;e)</span></div>
 <div class="block">Inserts element e into the heap
  whilst retaining the min-heap invariant.</div>
 <dl class="notes">
@@ -203,7 +203,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="extractMin()">
 <h3>extractMin</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Heap.html" title="type parameter in Heap">T</a></span>&nbsp;<span class="element-name">extractMin</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Heap.html" title="type parameter in Heap">E</a></span>&nbsp;<span class="element-name">extractMin</span>()</div>
 <div class="block">Extracts the minimal element of the heap
  whilst retaining min-heap invariant.</div>
 <dl class="notes">

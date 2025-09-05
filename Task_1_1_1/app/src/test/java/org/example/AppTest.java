@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
 import org.junit.jupiter.api.Test;
 
 /** A class for general testing. */
@@ -81,6 +82,21 @@ public class AppTest {
         int[] arr = { -2, -1, -3, 0, 1 };
         App.sort(arr);
         assertTrue(isSorted(arr));
+    }
+
+    @Test
+    void testHeapDefaultConstructor() {
+        Heap<Integer> h = new Heap<>();
+        assertEquals(0, h.size());
+    }
+
+    @Test
+    void testHeapInsertAndSize() {
+        Heap<Integer> heap = new Heap<>();
+        heap.insert(1);
+        heap.insert(2);
+        heap.insert(3);
+        assertEquals(3, heap.size());
     }
 
     @Test

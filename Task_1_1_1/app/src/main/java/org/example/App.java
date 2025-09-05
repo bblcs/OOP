@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
 
 /** The main class of the program. */
 public class App {
@@ -11,18 +10,18 @@ public class App {
      * @param arr - array of integers.
      */
     static void sort(int[] arr) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        Heap<Integer> pq = new Heap<>();
         for (int i = 0; i < arr.length; i++) {
-            pq.add(arr[i]);
+            pq.insert(arr[i]);
         }
 
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = pq.poll();
+            arr[i] = pq.extractMin();
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = {5, 4, 3, 2, 1};
+        int[] arr = { 5, 4, 3, 2, 1 };
         App.sort(arr);
         System.out.println(Arrays.toString(arr));
     }

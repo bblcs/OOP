@@ -9,15 +9,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import org.junit.jupiter.api.Test;
 
 /** A class for general testing. */
 public class AppTest {
 
     /**
-     * determines whether the arr is sorted
-     *
+     * Determines whether the arr is sorted.
+     * 
      * @param arr an array
      * @return whether the arr is sorted
      */

@@ -20,6 +20,11 @@ public class App {
         }
     }
 
+    /**
+     * Sorts and prints an example array of integers.
+     * 
+     * @param args commandline arguments, not used.
+     */
     public static void main(String[] args) {
         int[] arr = { 5, 4, 3, 2, 1 };
         App.sort(arr);

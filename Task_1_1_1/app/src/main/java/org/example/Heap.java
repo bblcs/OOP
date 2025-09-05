@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import static java.util.Collections.swap;
 
 /**
  * A binary min-heap.
@@ -63,15 +63,17 @@ public class Heap<T extends Comparable<T>> {
      * @return minimal element in the heap.
      */
     public T extractMin() {
-        T min = data.get(0);
         int last = size() - 1;
-        Collections.swap(data, 0, last);
+        T min = data.get(0);
+        swap(data, 0, last);
         data.remove(last);
         siftDown(0);
         return min;
     }
 
     /**
+     * Returns number of elements in the heap
+     * 
      * @return number of elements in the heap.
      */
     public int size() {
@@ -92,14 +94,14 @@ public class Heap<T extends Comparable<T>> {
         }
 
         if (smallest != i) {
-            Collections.swap(data, i, smallest);
+            swap(data, i, smallest);
             siftDown(smallest);
         }
     }
 
     private void siftUp(int i) {
         if (i > 0 && data.get(i).compareTo(data.get(parent(i))) < 0) {
-            Collections.swap(data, i, parent(i));
+            swap(data, i, parent(i));
             siftUp(parent(i));
         }
     }

@@ -44,42 +44,42 @@ public class AppTest {
 
     @Test
     void testSingleElementArray() {
-        int[] arr = {0};
+        int[] arr = { 0 };
         App.sort(arr);
         assertTrue(isSorted(arr));
     }
 
     @Test
     void testAlreadySortedArray() {
-        int[] arr = {1, 2, 3};
+        int[] arr = { 1, 2, 3 };
         App.sort(arr);
         assertTrue(isSorted(arr));
     }
 
     @Test
     void testReverseSortedArray() {
-        int[] arr = {5, 4, 3, 2, 1};
+        int[] arr = { 5, 4, 3, 2, 1 };
         App.sort(arr);
         assertTrue(isSorted(arr));
     }
 
     @Test
     void testUnsortedArray() {
-        int[] arr = {5, 4, 1, 2, 3};
+        int[] arr = { 5, 4, 1, 2, 3 };
         App.sort(arr);
         assertTrue(isSorted(arr));
     }
 
     @Test
     void testArrayWithDuplicates() {
-        int[] arr = {3, 2, 4, 2, 3, 1};
+        int[] arr = { 3, 2, 4, 2, 3, 1 };
         App.sort(arr);
         assertTrue(isSorted(arr));
     }
 
     @Test
     void testArrayWithNegativeNumbers() {
-        int[] arr = {-2, -1, -3, 0, 1};
+        int[] arr = { -2, -1, -3, 0, 1 };
         App.sort(arr);
         assertTrue(isSorted(arr));
     }
@@ -90,7 +90,7 @@ public class AppTest {
         PrintStream ps = new PrintStream(baos);
         PrintStream old = System.out;
         System.setOut(ps);
-        App.main(new String[]{});
+        App.main(new String[] {});
         System.setOut(old);
         String cap = baos.toString();
         assertEquals("[1, 2, 3, 4, 5]\n", cap);

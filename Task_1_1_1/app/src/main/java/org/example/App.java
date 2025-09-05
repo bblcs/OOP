@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /** The main class of the program. */
 public class App {
@@ -10,10 +12,8 @@ public class App {
      * @param arr - array of integers.
      */
     static void sort(int[] arr) {
-        Heap<Integer> pq = new Heap<>();
-        for (int i = 0; i < arr.length; i++) {
-            pq.insert(arr[i]);
-        }
+        List<Integer> arrList = Arrays.stream(arr).boxed().collect(Collectors.toList());
+        Heap<Integer> pq = new Heap<>(arrList);
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = pq.extractMin();

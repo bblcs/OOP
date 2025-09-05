@@ -3,13 +3,14 @@ package org.example;
 import static java.util.Collections.swap;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * A binary min-heap.
  *
- * @param <T> Comparable elements.
+ * @param <E> Comparable elements.
  */
-public class Heap<T extends Comparable<T>> {
+public class Heap<E extends Comparable<E>> {
     private static int left(int i) {
         return 2 * i + 1;
     }
@@ -25,7 +26,7 @@ public class Heap<T extends Comparable<T>> {
     /**
      * The main 'array' of the binary heap.
      */
-    private ArrayList<T> data = new ArrayList<>();
+    private ArrayList<E> data = new ArrayList<>();
 
     /**
      * A basic constructor.
@@ -35,12 +36,12 @@ public class Heap<T extends Comparable<T>> {
     }
 
     /**
-     * Makes a heap from a given ArrayList of elements.
+     * Makes a heap from a given Collection of elements.
      *
      * @param arr array of elements that form the heap.
      */
-    public Heap(ArrayList<T> arr) {
-        data = new ArrayList<>(arr);
+    public Heap(Collection<? extends E> elements) {
+        data = new ArrayList<>(elements);
         for (int i = parent(data.size() - 1); i >= 0; i--) {
             siftDown(i);
         }
@@ -52,7 +53,7 @@ public class Heap<T extends Comparable<T>> {
      *
      * @param e element to insert.
      */
-    public void insert(T e) {
+    public void insert(E e) {
         data.add(e);
         siftUp(size() - 1);
     }
@@ -63,8 +64,8 @@ public class Heap<T extends Comparable<T>> {
      *
      * @return minimal element in the heap.
      */
-    public T extractMin() {
-        final T min = data.get(0);
+    public E extractMin() {
+        final E min = data.get(0);
         int last = size() - 1;
         swap(data, 0, last);
         data.remove(last);

@@ -38,7 +38,7 @@ public class Heap<E extends Comparable<E>> {
     /**
      * Makes a heap from a given Collection of elements.
      *
-     * @param arr array of elements that form the heap.
+     * @param elements array of elements that form the heap.
      */
     public Heap(Collection<? extends E> elements) {
         data = new ArrayList<>(elements);

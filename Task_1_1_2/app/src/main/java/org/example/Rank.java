@@ -7,10 +7,10 @@ public enum Rank {
     ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN,
     EIGHT, NINE, TEN, JACK, QUEEN, KING;
 
-    @Generated
     /**
-     * Why do I have to comment toString???
+     * Why do I have to comment toString???.
      */
+    @Generated
     public String toString() {
         switch (this) {
             case ACE:

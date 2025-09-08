@@ -32,6 +32,9 @@ public class Game {
     private GameState state;
     private GameResult result;
 
+    /**
+     * The default constructor.
+     */
     @Generated
     public Game() {
         this.dealerHand = new Hand();
@@ -41,6 +44,11 @@ public class Game {
         playerHand.open();
     }
 
+    /**
+     * The debug constructor.
+     *
+     * @param deck that is predetermined.
+     */
     @Generated
     public Game(Deck deck) {
         this.deck = deck;

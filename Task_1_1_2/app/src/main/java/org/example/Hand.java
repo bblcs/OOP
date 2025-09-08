@@ -36,19 +36,19 @@ public class Hand {
      * @return the sum.
      */
     public int sum() {
-        int nAces = 0;
+        int aces = 0;
         int sum = 0;
 
         for (Card card : cards) {
             sum += card.value();
             if (card.getRank() == Rank.ACE) {
-                nAces++;
+                aces++;
             }
         }
 
-        while (sum <= 11 && nAces > 0) {
+        while (sum <= 11 && aces > 0) {
             sum += 10;
-            nAces--;
+            aces--;
         }
 
         return sum;
@@ -66,6 +66,9 @@ public class Hand {
     }
 
     @Generated
+    /**
+     * Why do i need to comment toString????.
+     */
     public String toString() {
         ArrayList<String> list = new ArrayList<>();
         for (Card card : cards) {

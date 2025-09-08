@@ -59,6 +59,7 @@ public class App {
                     break;
                 case DEALER_WIN:
                     dealerWins += 1;
+                    break;
                 default:
             }
 

@@ -37,6 +37,14 @@ tasks.jacocoTestReport {
     reports {
         xml.required = true
     }
+
+    classDirectories.setFrom(
+        files(classDirectories.files.map {
+            fileTree(it) {
+                exclude("**/App.class")
+            }
+        })
+    )
 }
 
 tasks.test {
@@ -60,4 +68,8 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
 }

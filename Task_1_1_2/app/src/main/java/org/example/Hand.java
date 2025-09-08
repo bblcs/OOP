@@ -17,7 +17,7 @@ public class Hand {
     /**
      * Adds a Card into the Hand.
      *
-     * @param A card to add.
+     * @param card A card to add.
      */
     public void add(Card card) {
         cards.add(card);

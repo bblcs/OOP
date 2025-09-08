@@ -6,6 +6,9 @@ package org.example;
 public enum Suit {
     HEARTS, DIAMONDS, CLUBS, SPADES;
 
+    /**
+     * Why do I have to comment toString???
+     */
     @Generated
     public String toString() {
         switch (this) {

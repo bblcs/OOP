@@ -1,9 +1,9 @@
 package org.example;
 
+import static java.util.Collections.shuffle;
+
 import java.util.ArrayList;
 import java.util.Random;
-
-import static java.util.Collections.shuffle;
 
 /**
  * Represents a deck of 52 cards.
@@ -12,6 +12,9 @@ public class Deck {
     private ArrayList<Card> cards;
     private Random rand;
 
+    /**
+     * A default constructor.
+     */
     public Deck() {
         cards = new ArrayList<>();
         rand = new Random(System.currentTimeMillis());

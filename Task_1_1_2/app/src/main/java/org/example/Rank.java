@@ -1,13 +1,16 @@
 package org.example;
 
 /**
- * Represents a rank of a card
+ * Represents a rank of a card.
  */
 public enum Rank {
     ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN,
     EIGHT, NINE, TEN, JACK, QUEEN, KING;
 
     @Generated
+    /**
+     * Why do I have to comment toString???
+     */
     public String toString() {
         switch (this) {
             case ACE:

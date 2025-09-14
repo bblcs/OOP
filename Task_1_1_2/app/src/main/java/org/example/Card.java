@@ -57,47 +57,7 @@ public class Card {
      */
     @Generated
     public int value() {
-        int value;
-
-        switch (rank) {
-            case ACE:
-                value = 1;
-                break;
-            case TWO:
-                value = 2;
-                break;
-            case THREE:
-                value = 3;
-                break;
-            case FOUR:
-                value = 4;
-                break;
-            case FIVE:
-                value = 5;
-                break;
-            case SIX:
-                value = 6;
-                break;
-            case SEVEN:
-                value = 7;
-                break;
-            case EIGHT:
-                value = 8;
-                break;
-            case NINE:
-                value = 9;
-                break;
-            case TEN:
-                value = 10;
-                break;
-            case JACK, QUEEN, KING:
-                value = 10;
-                break;
-            default:
-                throw new IllegalStateException("lsp, calm down");
-        }
-
-        return value;
+        return rank.value();
     }
 
     /**

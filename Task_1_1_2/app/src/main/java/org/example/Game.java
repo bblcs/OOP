@@ -159,7 +159,7 @@ public class Game {
      *
      * @return whether the player's hand is busted.
      */
-    private boolean isPlayerBust() {
+    public boolean isPlayerBust() {
         return playerHand.sum() > 21;
     }
 

@@ -34,15 +34,6 @@ public class Card {
      *
      * @return suit.
      */
-    public Suit getSuit() {
-        return suit;
-    }
-
-    /**
-     * Returns the card's suit.
-     *
-     * @return suit.
-     */
     public Rank getRank() {
         return rank;
     }

@@ -1,10 +1,14 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.plaf.nimbus.State;
+
+import org.example.Game.GameState;
 import org.junit.jupiter.api.Test;
 
 class GameTest {
@@ -71,6 +75,7 @@ class GameTest {
         ));
         game.startRound();
         game.playerAction(Game.PlayerChoice.HIT);
+        assertTrue(game.isPlayerBust());
         assertEquals(23, game.getPlayerHand().sum());
         assertEquals(Game.GameState.GAME_OVER, game.getState());
         assertEquals(Game.GameResult.DEALER_WIN, game.getResult());
@@ -139,5 +144,22 @@ class GameTest {
         game.playerAction(Game.PlayerChoice.STAND);
         game.dealerTurn();
         assertEquals(Game.GameResult.PUSH, game.getResult());
+    }
+
+    @Test
+    void testConstructor() {
+        Game game = new Game();
+        game.startRound();
+        game.playerAction(Game.PlayerChoice.HIT);
+        game.dealerTurn();
+        game.playerAction(Game.PlayerChoice.HIT);
+        game.dealerTurn();
+        game.playerAction(Game.PlayerChoice.HIT);
+        game.dealerTurn();
+        game.playerAction(Game.PlayerChoice.HIT);
+        game.dealerTurn();
+        game.playerAction(Game.PlayerChoice.HIT);
+        game.dealerTurn();
+        assertEquals(game.getState(), GameState.GAME_OVER);
     }
 }

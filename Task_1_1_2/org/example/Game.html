@@ -178,14 +178,19 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Game.GameState.html" title="enum class in org.example">Game.GameState</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getState()" class="member-name-link">getState</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playerAction(org.example.Game.PlayerChoice)" class="member-name-link">playerAction</a><wbr>(<a href="Game.PlayerChoice.html" title="enum class in org.example">Game.PlayerChoice</a>&nbsp;choice)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPlayerBust()" class="member-name-link">isPlayerBust</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Acts on player's choice.</div>
+<div class="block">Shows if player has more than 21 points.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startRound()" class="member-name-link">startRound</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#playerAction(org.example.Game.PlayerChoice)" class="member-name-link">playerAction</a><wbr>(<a href="Game.PlayerChoice.html" title="enum class in org.example">Game.PlayerChoice</a>&nbsp;choice)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Acts on player's choice.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startRound()" class="member-name-link">startRound</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Starts the round, adding 2 cards to hands and opening cards needed.</div>
 </div>
 </div>
@@ -299,6 +304,17 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a string representing current hands from player's perspective.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isPlayerBust()">
+<h3>isPlayerBust</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPlayerBust</span>()</div>
+<div class="block">Shows if player has more than 21 points.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>whether the player's hand is busted.</dd>
 </dl>
 </section>
 </li>

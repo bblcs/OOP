@@ -57,8 +57,4 @@ public class Card {
     public String toString() {
         return rank.toString() + " of " + suit.toString();
     }
-
-    public int hashCode() {
-        return java.util.Objects.hash(suit, rank);
-    }
 }

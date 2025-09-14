@@ -35,7 +35,6 @@ public class Game {
     /**
      * The default constructor.
      */
-    @Generated
     public Game() {
         this.dealerHand = new Hand();
         this.playerHand = new Hand();
@@ -49,29 +48,24 @@ public class Game {
      *
      * @param deck that is predetermined.
      */
-    @Generated
     public Game(Deck deck) {
         this.deck = deck;
         this.playerHand = new Hand();
         this.dealerHand = new Hand();
     }
 
-    @Generated
     public Hand getDealerHand() {
         return dealerHand;
     }
 
-    @Generated
     public Hand getPlayerHand() {
         return playerHand;
     }
 
-    @Generated
     public GameState getState() {
         return state;
     }
 
-    @Generated
     public GameResult getResult() {
         return result;
     }
@@ -128,7 +122,6 @@ public class Game {
      *
      * @return a string representing current round's result.
      */
-    @Generated
     public String getResultString() {
         switch (result) {
             case PLAYER_WIN:
@@ -150,7 +143,6 @@ public class Game {
      *
      * @return a string representing current hands from player's perspective.
      */
-    @Generated
     public String getHandStatusString() {
         String dealerStatus = "dealer's hand: " + dealerHand;
         if (state == GameState.DEALER_TURN || state == GameState.GAME_OVER) {
@@ -167,7 +159,6 @@ public class Game {
      *
      * @return whether the player's hand is busted.
      */
-    @Generated
     private boolean isPlayerBust() {
         return playerHand.sum() > 21;
     }

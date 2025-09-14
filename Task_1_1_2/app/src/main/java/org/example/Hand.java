@@ -65,7 +65,6 @@ public class Hand {
         }
     }
 
-    @Generated
     /**
      * Why do i need to comment toString????.
      */

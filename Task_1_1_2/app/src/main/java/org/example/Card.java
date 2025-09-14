@@ -25,7 +25,6 @@ public class Card {
      *
      * @return bebebebeb.
      */
-    @Generated
     public boolean isFaceUp() {
         return face;
     }
@@ -35,7 +34,6 @@ public class Card {
      *
      * @return suit.
      */
-    @Generated
     public Suit getSuit() {
         return suit;
     }
@@ -45,7 +43,6 @@ public class Card {
      *
      * @return suit.
      */
-    @Generated
     public Rank getRank() {
         return rank;
     }
@@ -55,7 +52,6 @@ public class Card {
      *
      * @return value of the card.
      */
-    @Generated
     public int value() {
         return rank.value();
     }
@@ -63,17 +59,14 @@ public class Card {
     /**
      * Makes the card face upward.
      */
-    @Generated
     public void reveal() {
         face = true;
     }
 
-    @Generated
     public String toString() {
         return rank.toString() + " of " + suit.toString();
     }
 
-    @Generated
     public int hashCode() {
         return java.util.Objects.hash(suit, rank);
     }

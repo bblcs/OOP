@@ -31,7 +31,6 @@ public class Deck {
      *
      * @return the size of the deck.
      */
-    @Generated
     public int size() {
         return cards.size();
     }

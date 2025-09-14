@@ -23,7 +23,6 @@ public enum Suit {
     /**
      * Why do I have to comment toString???.
      */
-    @Generated
     public String toString() {
         return this.s;
     }

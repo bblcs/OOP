@@ -4,44 +4,37 @@ package org.example;
  * Represents a rank of a card.
  */
 public enum Rank {
-    ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN,
-    EIGHT, NINE, TEN, JACK, QUEEN, KING;
+    ACE("Ace"),
+    TWO("2"),
+    THREE("3"),
+    FOUR("4"),
+    FIVE("5"),
+    SIX("6"),
+    SEVEN("7"),
+    EIGHT("8"),
+    NINE("9"),
+    TEN("10"),
+    JACK("Jack"),
+    QUEEN("Queen"),
+    KING("King");
+
+    private String s;
+
+    /**
+     * Mandatory constructor comment, yay
+     *
+     * @param the name
+     */
+    Rank(String s) {
+        this.s = s;
+    }
 
     /**
      * Why do I have to comment toString???.
      */
     @Generated
     public String toString() {
-        switch (this) {
-            case ACE:
-                return "Ace";
-            case TWO:
-                return "Two";
-            case THREE:
-                return "Three";
-            case FOUR:
-                return "Four";
-            case FIVE:
-                return "Five";
-            case SIX:
-                return "Six";
-            case SEVEN:
-                return "Seven";
-            case EIGHT:
-                return "Eight";
-            case NINE:
-                return "Nine";
-            case TEN:
-                return "Ten";
-            case JACK:
-                return "Jack";
-            case QUEEN:
-                return "Queen";
-            case KING:
-                return "King";
-            default:
-                throw new IllegalArgumentException();
-        }
+        return this.s;
     }
 
 }

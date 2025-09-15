@@ -4,6 +4,7 @@ import static java.util.Collections.shuffle;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.stream.Stream;
 
 /**
  * Represents a deck of 52 cards.
@@ -46,5 +47,14 @@ public class Deck {
         }
 
         return cards.remove(rand.nextInt(size()));
+    }
+
+    /**
+     * Returns a stream of cards from the deck.
+     *
+     * @return A stream of cards.
+     */
+    public Stream<Card> stream() {
+        return cards.stream();
     }
 }

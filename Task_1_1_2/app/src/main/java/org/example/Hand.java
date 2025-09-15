@@ -65,9 +65,7 @@ public class Hand {
         }
     }
 
-    /**
-     * Why do i need to comment toString????.
-     */
+    @Override
     public String toString() {
         ArrayList<String> list = new ArrayList<>();
         for (Card card : cards) {

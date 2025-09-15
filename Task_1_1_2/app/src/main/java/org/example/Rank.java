@@ -40,9 +40,7 @@ public enum Rank {
         return this.val;
     }
 
-    /**
-     * Why do I have to comment toString???.
-     */
+    @Override
     public String toString() {
         return this.s;
     }

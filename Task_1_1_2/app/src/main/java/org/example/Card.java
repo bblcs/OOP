@@ -54,6 +54,7 @@ public class Card {
         face = true;
     }
 
+    @Override
     public String toString() {
         return rank.toString() + " of " + suit.toString();
     }

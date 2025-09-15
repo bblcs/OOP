@@ -20,9 +20,7 @@ public enum Suit {
         this.s = s;
     }
 
-    /**
-     * Why do I have to comment toString???.
-     */
+    @Override
     public String toString() {
         return this.s;
     }

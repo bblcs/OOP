@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.plaf.nimbus.State;
-
 import org.example.Game.GameState;
 import org.junit.jupiter.api.Test;
 
@@ -150,15 +148,9 @@ class GameTest {
     void testConstructor() {
         Game game = new Game();
         game.startRound();
-        game.playerAction(Game.PlayerChoice.HIT);
-        game.dealerTurn();
-        game.playerAction(Game.PlayerChoice.HIT);
-        game.dealerTurn();
-        game.playerAction(Game.PlayerChoice.HIT);
-        game.dealerTurn();
-        game.playerAction(Game.PlayerChoice.HIT);
-        game.dealerTurn();
-        game.playerAction(Game.PlayerChoice.HIT);
+        for (int i = 0; i < 5; i++) {
+            game.playerAction(Game.PlayerChoice.HIT);
+        }
         game.dealerTurn();
         assertEquals(game.getState(), GameState.GAME_OVER);
     }

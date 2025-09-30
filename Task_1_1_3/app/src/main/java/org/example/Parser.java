@@ -11,6 +11,14 @@ public class Parser {
         this.input = input.replaceAll("\\s+", "");
     }
 
+    /**
+     * Parses a string into an Expression
+     *
+     * @param input input string.
+     * @return parsed expression.
+     * @throws IllegalArgumentException on empty input
+     * @throws IllegalStateException    on incorrect input
+     */
     public static Expression parse(String input) {
         if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException("Input string cannot be null or empty.");
@@ -110,20 +118,21 @@ public class Parser {
         }
         return false;
     }
-    
+
     private char advance() {
         return input.charAt(pos++);
     }
-    
+
     private char peek() {
-        if (isAtEnd()) return '\0';
+        if (isAtEnd())
+            return '\0';
         return input.charAt(pos);
     }
 
     private char previous() {
         return input.charAt(pos - 1);
     }
-    
+
     private boolean isAtEnd() {
         return pos >= input.length();
     }

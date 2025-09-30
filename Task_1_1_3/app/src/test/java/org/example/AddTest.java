@@ -1,8 +1,9 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class AddTest {
     @Test
@@ -25,4 +26,3 @@ class AddTest {
         assertEquals(e2.hashCode(), e.hashCode());
     }
 }
-

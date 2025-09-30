@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SimplificationTest {
@@ -8,8 +9,9 @@ class SimplificationTest {
     void testRuleA_MultiplicationByZero() {
         Expression e = new Mul(new Variable("x"), new Number(0));
         Expression simplified = e.simplify();
+        Expression expected = new Number(0);
 
-        assertEquals("0", simplified.toString());
+        assertEquals(expected, simplified);
         assertTrue(simplified instanceof Number);
         assertEquals(0, ((Number) simplified).getValue());
     }
@@ -18,8 +20,9 @@ class SimplificationTest {
     void testRuleB_MultiplicationByOne() {
         Expression e = new Mul(new Variable("x"), new Number(1));
         Expression simplified = e.simplify();
+        Expression expected = new Variable("x");
 
-        assertEquals("x", simplified.toString());
+        assertEquals(expected, simplified);
         assertTrue(simplified instanceof Variable);
     }
 
@@ -27,16 +30,18 @@ class SimplificationTest {
     void testRuleC_SubtractionOfIdentical() {
         Expression e = new Sub(new Variable("y"), new Variable("y"));
         Expression simplified = e.simplify();
+        Expression expected = new Number(0);
 
-        assertEquals("0", simplified.toString());
+        assertEquals(expected, simplified);
     }
 
     @Test
     void testRuleD_ConstantFolding() {
         Expression e = new Mul(new Add(new Number(5), new Number(3)), new Number(10));
         Expression simplified = e.simplify();
+        Expression expected = new Number(80);
 
-        assertEquals("80", simplified.toString());
+        assertEquals(expected, simplified);
         assertTrue(simplified instanceof Number);
         assertEquals(80, ((Number) simplified).getValue());
     }
@@ -46,25 +51,28 @@ class SimplificationTest {
         Expression e = new Add(
                 new Mul(new Variable("x"), new Number(1)),
                 new Sub(new Variable("y"), new Variable("y")));
+        Expression expected = new Variable("x");
 
         Expression simplified = e.simplify();
-        assertEquals("x", simplified.toString());
+        assertEquals(expected, simplified);
     }
 
     @Test
     void testNoSimplificationPossible() {
-        Expression e = Parser.parse("x + y * 2");
+        Expression e = new Add(new Variable("x"), new Mul(new Variable("y"), new Number(2)));
         Expression simplified = e.simplify();
 
-        assertEquals("(x+(y*2))", simplified.toString());
+        assertEquals(e, simplified);
     }
 
     @Test
     void testOriginalExpressionIsUnchanged() {
         Expression original = new Add(new Variable("x"), new Number(0));
-        Expression simplified = original.simplify();
+        Expression e = new Add(new Variable("x"), new Number(0));
+        Expression expected = new Variable("x");
+        Expression simplified = e.simplify();
 
-        assertEquals("x", simplified.toString());
-        assertEquals("(x+0)", original.toString());
+        assertEquals(expected, simplified);
+        assertEquals(original, e);
     }
 }

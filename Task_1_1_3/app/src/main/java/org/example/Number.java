@@ -19,7 +19,7 @@ public class Number extends Expression {
 
     @Override
     public Expression simplify() {
-        return this;
+        return new Number(this.value);
     }
 
     @Override

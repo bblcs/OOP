@@ -32,7 +32,7 @@ public class Variable extends Expression {
 
     @Override
     public Expression simplify() {
-        return this;
+        return new Variable(this.name);
     }
 
     @Override

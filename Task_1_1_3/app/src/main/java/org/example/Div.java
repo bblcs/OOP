@@ -42,10 +42,12 @@ public class Div extends Expression {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null || getClass() != obj.getClass())
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
+        }
         Div div = (Div) obj;
         return left.equals(div.left) && right.equals(div.right);
     }

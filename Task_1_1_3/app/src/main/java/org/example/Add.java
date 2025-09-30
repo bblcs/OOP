@@ -26,10 +26,12 @@ public class Add extends Expression {
             return new Number(leftVal + rightVal);
         }
 
-        if (isConstant(simplifiedLeft, 0))
+        if (isConstant(simplifiedLeft, 0)) {
             return simplifiedRight;
-        if (isConstant(simplifiedRight, 0))
+        }
+        if (isConstant(simplifiedRight, 0)) {
             return simplifiedLeft;
+        }
 
         return new Add(simplifiedLeft, simplifiedRight);
     }
@@ -40,10 +42,12 @@ public class Add extends Expression {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null || getClass() != obj.getClass())
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
+        }
         Add add = (Add) obj;
         return left.equals(add.left) && right.equals(add.right);
     }

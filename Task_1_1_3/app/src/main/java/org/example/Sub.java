@@ -35,10 +35,12 @@ public class Sub extends Expression {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null || getClass() != obj.getClass())
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
+        }
         Sub sub = (Sub) obj;
         return left.equals(sub.left) && right.equals(sub.right);
     }

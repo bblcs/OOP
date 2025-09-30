@@ -13,6 +13,8 @@ public abstract class Expression {
      *
      * @param bindings name:int.
      * @return result of the evaluation.
+     * @throws IllegalArgumentException if bindings contain not all
+     *                                  needed variables.
      */
     public abstract int eval(Map<String, Integer> bindings);
 
@@ -44,6 +46,8 @@ public abstract class Expression {
      *
      * @param assignments variables.
      * @return result.
+     * @throws IllegalArgumentException if bindings contain not all needed
+     *                                  variables.
      */
     public int eval(String assignments) {
         Map<String, Integer> bindings = parseAssignments(assignments);

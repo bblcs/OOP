@@ -11,6 +11,7 @@ public interface Graph<V> {
 
     /**
      * Adds a vertex to the graph.
+     * Does nothing if the vertex is already in the graph.
      *
      * @param vertex the vertex to add.
      */

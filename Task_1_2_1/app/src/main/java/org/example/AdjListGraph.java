@@ -24,14 +24,11 @@ public class AdjListGraph<V> extends AbstractGraph<V> {
     public boolean removeVertex(V vertex) {
         boolean vertexExistedAsKey = adjList.remove(vertex) != null;
 
-        boolean removedAsNeighbor = false;
         for (Set<V> neighbors : adjList.values()) {
-            if (neighbors.remove(vertex)) {
-                removedAsNeighbor = true;
-            }
+            neighbors.remove(vertex);
         }
 
-        return vertexExistedAsKey || removedAsNeighbor;
+        return vertexExistedAsKey;
     }
 
     @Override

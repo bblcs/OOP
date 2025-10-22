@@ -8,6 +8,11 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+/**
+ * AbstractGraph abstract class implementing Graph for utility purposes.
+ *
+ * @param <V> vertexae type.
+ */
 public abstract class AbstractGraph<V> implements Graph<V> {
     /**
      * Creates a graph from a text file.
@@ -45,7 +50,7 @@ public abstract class AbstractGraph<V> implements Graph<V> {
                     String destStr = parts[1].trim();
 
                     if (sourceStr.isEmpty() || destStr.isEmpty()) {
-                        throw new IllegalArgumentException("Edge contains an empty vertex name: " + line);
+                        throw new IllegalArgumentException("Empty vertex name: " + line);
                     }
 
                     V source = vertexParser.apply(sourceStr);
@@ -64,13 +69,15 @@ public abstract class AbstractGraph<V> implements Graph<V> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
+        if (this == o) {
             return true;
-        if (!(o instanceof Graph<?> that))
+        }
+        if (!(o instanceof Graph<?> that)) {
             return false;
+        }
 
-        return Objects.equals(this.getVertices(), that.getVertices()) &&
-                Objects.equals(this.getEdges(), that.getEdges());
+        return Objects.equals(this.getVertices(), that.getVertices())
+                && Objects.equals(this.getEdges(), that.getEdges());
     }
 
     @Override

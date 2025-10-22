@@ -4,13 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
 class ToposortTest {
     @Test
     void testTwo() {
-        GraphAlgorithm<Integer, List<Integer>> toposort = new Toposort<>();
+        final GraphAlgorithm<Integer, List<Integer>> toposort = new Toposort<>();
 
         AdjListGraph<Integer> graph = new AdjListGraph<>();
         graph.addEdge(1, 2);

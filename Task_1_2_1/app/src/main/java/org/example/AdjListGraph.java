@@ -62,6 +62,10 @@ public class AdjListGraph<V> extends AbstractGraph<V> {
 
     @Override
     public Set<V> getNeighbors(V vertex) {
-        return adjList.containsKey(vertex) ? Collections.unmodifiableSet(adjList.get(vertex)) : null;
+        if (adjList.containsKey(vertex)) {
+            return Collections.unmodifiableSet(adjList.get(vertex));
+        }
+
+        return null;
     }
 }

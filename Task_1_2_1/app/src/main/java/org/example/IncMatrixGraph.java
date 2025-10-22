@@ -21,6 +21,9 @@ public class IncMatrixGraph<V> extends AbstractGraph<V> {
 
     private final List<int[]> incMatrixColumns;
 
+    /**
+     * Constructs an IncMatrixGraph.
+     */
     public IncMatrixGraph() {
         this.vertexToIndex = new LinkedHashMap<>();
         this.indexToVertex = new ArrayList<>();

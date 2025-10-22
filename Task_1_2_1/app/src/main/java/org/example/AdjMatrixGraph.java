@@ -1,6 +1,12 @@
 package org.example;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * An adjacency matrix graph representation.
@@ -8,11 +14,10 @@ import java.util.*;
  * @param <V> the type of the vertices.
  */
 public class AdjMatrixGraph<V> extends AbstractGraph<V> {
-
-	private Map<V, Integer> vertexToIndex;
-	private List<V> indexToVertex;
-	private boolean[][] adjMatrix;
-	private int vertexCount;
+    private Map<V, Integer> vertexToIndex;
+    private List<V> indexToVertex;
+    private boolean[][] adjMatrix;
+    private int vertexCount;
 
 	private static final int DEFAULT_CAPACITY = 16;
 

@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Abstract class for testing Graph's
+ * Abstract class for testing Graph's.
  */
 public abstract class GraphTest {
 

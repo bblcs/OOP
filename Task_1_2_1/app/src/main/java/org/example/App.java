@@ -4,7 +4,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Main class of the App.
+ */
 public class App {
+    /**
+     * The main function of the program.
+     *
+     * @param args arguments (unused)
+     */
     public static void main(String[] args) {
         Graph<Integer> graph = new AdjListGraph<>();
 
@@ -33,8 +41,7 @@ public class App {
             Graph<String> stringGraph = AbstractGraph.fromFile(
                     "testgraph.txt",
                     AdjMatrixGraph::new,
-                    Function.identity()
-            );
+                    Function.identity());
 
             System.out.println(stringGraph);
         } catch (IOException e) {

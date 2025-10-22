@@ -1,65 +1,27 @@
 package org.example;
 
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
-import java.util.Set;
-import static org.junit.jupiter.api.Assertions.*;
 
-class AdjMatrixGraphTest {
-
-    private Graph<String> graph;
-
-    @BeforeEach
-    void setUp() {
-        graph = new AdjMatrixGraph<>();
+class AdjMatrixGraphTest extends GraphTest {
+    @Override
+    protected Graph<String> createGraph() {
+        return new AdjMatrixGraph<>();
     }
 
     @Test
-    void testAddAndGetVertices() {
-        graph.addVertex("A");
-        graph.addVertex("B");
-        assertEquals(Set.of("A", "B"), graph.getVertices());
-        graph.addVertex("A");
-        assertEquals(2, graph.getVertices().size());
+    void testResize() {
+        for (int i = 0; i < 99; i++) {
+            graph.addEdge(String.valueOf(i), String.valueOf(i + 1));
+            ;
+        }
+
+        for (int i = 0; i < 99; i++) {
+            assertTrue(graph.removeEdge(String.valueOf(i), String.valueOf(i + 1)));
+        }
+
+        assertTrue(graph.getEdges().isEmpty());
     }
 
-    @Test
-    void testAddAndGetEdges() {
-        graph.addEdge("A", "B");
-        graph.addEdge("B", "C");
-        Set<Edge<String>> expectedEdges = Set.of(new Edge<>("A", "B"), new Edge<>("B", "C"));
-        assertEquals(expectedEdges, graph.getEdges());
-        assertEquals(Set.of("A", "B", "C"), graph.getVertices());
-    }
-
-    @Test
-    void testGetNeighbors() {
-        graph.addEdge("A", "B");
-        graph.addEdge("A", "C");
-        graph.addVertex("D");
-        assertEquals(Set.of("B", "C"), graph.getNeighbors("A"));
-        assertTrue(graph.getNeighbors("B").isEmpty());
-        assertNull(graph.getNeighbors("X"));
-    }
-
-    @Test
-    void testRemoveEdge() {
-        graph.addEdge("A", "B");
-        assertTrue(graph.removeEdge("A", "B"));
-        assertFalse(graph.getEdges().contains(new Edge<>("A", "B")));
-        assertFalse(graph.removeEdge("A", "C"));
-    }
-
-    @Test
-    void testRemoveVertex() {
-        graph.addEdge("A", "B");
-        graph.addEdge("B", "C");
-        graph.addEdge("C", "A");
-
-        assertTrue(graph.removeVertex("B"));
-        assertFalse(graph.getVertices().contains("B"));
-        assertEquals(Set.of("A", "C"), graph.getVertices());
-        assertEquals(Set.of(new Edge<>("C", "A")), graph.getEdges());
-        assertFalse(graph.removeVertex("X"));
-    }
 }

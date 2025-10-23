@@ -76,4 +76,17 @@ public abstract class GraphTest {
         assertEquals(Set.of(new Edge<>("C", "A")), graph.getEdges());
         assertFalse(graph.removeVertex("X"));
     }
+
+    @Test
+    void testResize() {
+        for (int i = 0; i < 99; i++) {
+            graph.addEdge(String.valueOf(i), String.valueOf(i + 1));
+        }
+
+        for (int i = 0; i < 99; i++) {
+            assertTrue(graph.removeEdge(String.valueOf(i), String.valueOf(i + 1)));
+        }
+
+        assertTrue(graph.getEdges().isEmpty());
+    }
 }

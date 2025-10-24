@@ -38,10 +38,43 @@ public class AbstractGraphTest {
 
     @Test
     void testNicheEquals() {
-        Graph<String> graph = new AdjListGraph<>();
+        Graph<String> g1 = new AdjListGraph<>();
+        Graph<String> g2 = new AdjMatrixGraph<>();
+        Graph<String> g3 = new IncMatrixGraph<>();
 
-        assertEquals(graph, graph);
-        assertNotEquals(graph, new String());
+        assertEquals(g1, g1);
+        assertEquals(g1, g2);
+        assertEquals(g1, g3);
+        assertEquals(g2, g3);
+
+        assertNotEquals(g1, new String());
+    }
+
+    @Test
+    void testAdequateEquals() {
+        Graph<String> g1 = new AdjListGraph<>();
+        g1.addEdge("A", "B");
+        g1.addEdge("B", "C");
+        g1.addEdge("B", "D");
+        g1.addEdge("C", "A");
+        g1.addVertex("E");
+        Graph<String> g2 = new AdjMatrixGraph<>();
+        g2.addEdge("A", "B");
+        g2.addEdge("B", "C");
+        g2.addEdge("B", "D");
+        g2.addEdge("C", "A");
+        g2.addVertex("E");
+        Graph<String> g3 = new IncMatrixGraph<>();
+        g3.addEdge("A", "B");
+        g3.addEdge("B", "C");
+        g3.addEdge("B", "D");
+        g3.addEdge("C", "A");
+        g3.addVertex("E");
+
+        assertEquals(g1, g2);
+        assertEquals(g1, g3);
+        assertEquals(g2, g3);
+
     }
 
     @Test
